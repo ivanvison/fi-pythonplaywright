@@ -6,7 +6,7 @@ import os
 @pytest.fixture(scope='session')
 def context_creation(playwright):
     # Assess
-    browser = playwright.chromium.launch(headless=True) # , slow_mo=500
+    browser = playwright.chromium.launch(headless=True, slow_mo=500)
     context = browser.new_context()
 
     page = context.new_page()
@@ -36,7 +36,7 @@ def login_set_up(context_creation,playwright):
 
 @pytest.fixture(scope='session')
 def dashboard_page_context(context_creation,playwright):
-    browser = playwright.chromium.launch(headless=True) # , slow_mo=500
+    browser = playwright.chromium.launch(headless=True, slow_mo=500)
     context = browser.new_context(storage_state='state.json')
     page = context.new_page()
     page.goto("https://demo.fusioninvoice.com/dashboard")
@@ -47,7 +47,7 @@ def dashboard_page_context(context_creation,playwright):
 
 @pytest.fixture(scope='session')
 def clients_page_context(context_creation,playwright):
-    browser = playwright.chromium.launch(headless=True) # , slow_mo=500
+    browser = playwright.chromium.launch(headless=True, slow_mo=500)
     context = browser.new_context(storage_state='state.json')
     page = context.new_page()
     page.goto("https://demo.fusioninvoice.com/clients")
