@@ -3,11 +3,11 @@
 
 name: Fusion Invoice Playwright basic Tests
 
-# on:
-#  push:
-#    branches: [ "main" ]
-#  pull_request:
-#    branches: [ "main" ]
+ on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: read

@@ -3,7 +3,6 @@ Thank you for getting to this point. This repository was created for a quick run
 The application used for testing purposes was Fusion Invoice Online Demo. Shoutout to them :D [Link](https://www.fusioninvoice.com/)
 
 ## The basics (nor particular order):
-- Test login with parametrization
 - Assert login screen
 - Assert dashboard
 - Create and Assert new clients (using CSV file) and Make sure they appear in the main list

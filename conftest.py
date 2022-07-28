@@ -27,7 +27,7 @@ def context_creation(playwright):
 
 
 @pytest.fixture()
-def login_set_up(context_creation):
+def login_set_up(context_creation,playwright):
     context = context_creation
     page = context.new_page()
 
