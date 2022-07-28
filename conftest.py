@@ -26,7 +26,7 @@ def context_creation(playwright):
     browser.close()
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def login_set_up(context_creation,playwright):
     context = context_creation
     page = context.new_page()
@@ -34,7 +34,7 @@ def login_set_up(context_creation,playwright):
     yield page
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def dashboard_page_context(context_creation,playwright):
     browser = playwright.chromium.launch(headless=False, slow_mo=500)
     context = browser.new_context(storage_state='state.json')
@@ -45,7 +45,7 @@ def dashboard_page_context(context_creation,playwright):
     browser.close()
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def clients_page_context(context_creation,playwright):
     browser = playwright.chromium.launch(headless=False, slow_mo=500)
     context = browser.new_context(storage_state='state.json')
